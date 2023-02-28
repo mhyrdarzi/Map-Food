@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="@dimen/_3sdp"
+    android:background="@drawable/rounded_bg"
+    android:layout_margin="@dimen/_5sdp">
+
+    <!--Food image-->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imgFood"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        android:contentDescription="@string/foodimage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/TopRoundedImageView"
+        android:scaleType="centerCrop" />
+
+    <!--Content container-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sectionContent"
+        android:layout_width="match_parent"
+        android:padding="@dimen/_10sdp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_10sdp"
+
+        app:layout_constraintTop_toBottomOf="@id/imgFood"
+        tools:layout_editor_absoluteX="0dp">
+        <!--Food name-->
+        <TextView
+            android:id="@+id/txtFoodName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--Category-->
+        <TextView
+            android:id="@+id/txtCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textSize="@dimen/_14sdp"
+            app:drawableStartCompat="@drawable/ic_baseline_fastfood_24"
+            app:drawableTint="@color/red"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtFoodName" />
+
+        <!--Nationality-->
+        <TextView
+            android:id="@+id/txtNationality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:textSize="@dimen/_12sdp"
+            app:drawableStartCompat="@drawable/ic_baseline_language_24"
+            app:drawableTint="@color/red"
+            app:layout_constraintBottom_toBottomOf="@+id/txtCategory"
+            app:layout_constraintStart_toEndOf="@id/txtCategory"
+            app:layout_constraintTop_toTopOf="@id/txtCategory" />
+
+        <!--Source-->
+
+        <ImageView
+            android:id="@+id/imgSource"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_outline_source_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtFoodName"
+            app:tint="@color/red" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

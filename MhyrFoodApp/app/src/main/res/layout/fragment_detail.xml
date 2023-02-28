@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.detail.DetailFragment">
+
+    <!--Container-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sectionMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--Food image-->
+        <ImageView
+            android:id="@+id/imgFood"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_250sdp"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@tools:sample/backgrounds/scenic" />
+
+        <!--Back button-->
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_margin="@dimen/_15sdp"
+            android:background="@drawable/circle_bg_white_smoke"
+            android:elevation="@dimen/_5sdp"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--Favorite button-->
+        <ImageView
+            android:id="@+id/imgFavorite"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_margin="@dimen/_15sdp"
+            android:background="@drawable/circle_bg_white_smoke"
+            android:elevation="@dimen/_5sdp"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/ic_baseline_favorite_border_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--Header section-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_120sdp"
+            android:background="@drawable/circle_bg_dark"
+            app:layout_constraintBottom_toBottomOf="@id/imgFood"
+            app:layout_constraintTop_toBottomOf="@id/imgFood">
+
+            <!--Category item-->
+            <TextView
+                android:id="@+id/txtCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_20sdp"
+                android:textColor="@color/lotion"
+                android:textSize="@dimen/_14sdp"
+                app:drawableStartCompat="@drawable/ic_baseline_fastfood_24"
+                app:drawableTint="@color/lotion"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--Nationality item-->
+            <TextView
+                android:id="@+id/txtNationality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textColor="@color/lotion"
+                android:textSize="@dimen/_16sdp"
+                app:drawableStartCompat="@drawable/ic_baseline_language_24"
+                app:drawableTint="@color/lotion"
+                app:layout_constraintBottom_toBottomOf="@id/txtCategory"
+                app:layout_constraintStart_toEndOf="@id/txtCategory"
+                app:layout_constraintTop_toTopOf="@id/txtCategory" />
+
+            <!--Youtube item-->
+            <ImageView
+                android:id="@+id/imgYoutube"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/ic_baseline_smart_display_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/yellow" />
+
+            <!--Source item-->
+            <ImageView
+                android:id="@+id/imgSource"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:src="@drawable/ic_baseline_chrome_reader_mode_24"
+                app:layout_constraintBottom_toBottomOf="@+id/imgYoutube"
+                app:layout_constraintEnd_toStartOf="@id/imgYoutube"
+                app:layout_constraintTop_toTopOf="@id/imgYoutube"
+                app:tint="@color/yellow" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--Content section-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sectionContent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_55sdp"
+            android:background="@drawable/circle_bg_white"
+            android:padding="@dimen/_20sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/sectionHeader">
+
+            <!--Scroll bar-->
+            <ScrollView
+                android:id="@+id/scrollContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--Linear layout-->
+                <LinearLayout
+                    android:id="@+id/linearLayoutItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--Food name-->
+                    <TextView
+                        android:id="@+id/txtFoodName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Food Name"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_20sdp"
+                        android:textStyle="bold" />
+
+                    <!--Food name-->
+                    <TextView
+                        android:id="@+id/txtFoodDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Food Description"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_14sdp" />
+
+                    <!--Recipes section-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/sectionRecipes"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_8sdp"
+                        android:background="@drawable/circle_bg_white_smoke"
+                        android:elevation="@dimen/_5sdp"
+                        android:padding="@dimen/_5sdp">
+
+                        <!--Ingredients section-->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/sectionIngredients"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:elevation="@dimen/_3sdp"
+                            android:padding="@dimen/_10sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <!--Logo-->
+                            <ImageView
+                                android:id="@+id/imgIngredients"
+                                android:layout_width="@dimen/_25sdp"
+                                android:layout_height="@dimen/_25sdp"
+                                android:src="@drawable/measuringspoons"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <!--Title-->
+                            <TextView
+                                android:id="@+id/txtIngredientsTitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:text="@string/ingredients"
+                                android:textSize="@dimen/_15sdp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@id/imgIngredients"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <!--Description-->
+                            <TextView
+                                android:id="@+id/txtIngredientsDesc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:text="@string/description"
+                                android:textSize="@dimen/_14sdp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@id/txtIngredientsTitle"
+                                app:layout_constraintStart_toStartOf="@id/txtIngredientsTitle"
+                                app:layout_constraintTop_toBottomOf="@id/txtIngredientsTitle" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!--Divider-->
+
+                        <!--Measure section-->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/sectionMeasure"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:padding="@dimen/_10sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/sectionIngredients"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <!--Logo-->
+                            <ImageView
+                                android:id="@+id/imgMeasure"
+                                android:layout_width="@dimen/_25sdp"
+                                android:layout_height="@dimen/_25sdp"
+                                android:src="@drawable/recipebook"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <!--Title-->
+                            <TextView
+                                android:id="@+id/txtMeasureTitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:text="@string/measures"
+                                android:textSize="@dimen/_15sdp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@id/imgMeasure"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <!--Description-->
+                            <TextView
+                                android:id="@+id/txtMeasureDesc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:text="@string/description"
+                                android:textSize="@dimen/_14sdp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@id/txtMeasureTitle"
+                                app:layout_constraintStart_toStartOf="@id/txtMeasureTitle"
+                                app:layout_constraintTop_toBottomOf="@id/txtMeasureTitle" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
